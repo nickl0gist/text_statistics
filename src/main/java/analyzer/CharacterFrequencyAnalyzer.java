@@ -12,7 +12,7 @@ public class CharacterFrequencyAnalyzer implements Analyzer <Map <String, Intege
     }
 
     @Override
-    public void interpret(Map <String, Integer> analyzeResults) {
-
+    public String interpret(Map <String, Integer> analyzeResults) {
+        return null;
     }
 }

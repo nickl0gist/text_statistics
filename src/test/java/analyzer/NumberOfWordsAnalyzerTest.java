@@ -16,13 +16,19 @@ public class NumberOfWordsAnalyzerTest {
 
     @Test
     public void shortTextAnalyze(){
-        long b = analyzer.analyze("ala ma kota");
+        int b = analyzer.analyze("ala ma kota");
         assertEquals(3, b);
     }
 
     @Test
     public void shortTextWithSpecCharsAnalyze(){
-        long b = analyzer.analyze(".ala - ma: kota, psa! ");
+        int b = analyzer.analyze(".ala - ma: kota, psa! ");
         assertEquals(4, b);
+    }
+
+    @Test
+    public void interpretationTest(){
+        int b = analyzer.analyze(".ala - ma: kota, psa! ");
+        assertEquals("Given text contains 4 words.", analyzer.interpret(b));
     }
 }

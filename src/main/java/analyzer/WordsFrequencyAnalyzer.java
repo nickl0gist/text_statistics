@@ -11,7 +11,7 @@ public class WordsFrequencyAnalyzer implements Analyzer <Map <String, Integer>>{
     }
 
     @Override
-    public void interpret(Map<String, Integer> analyzeResults) {
-
+    public String interpret(Map<String, Integer> analyzeResults) {
+        return null;
     }
 }

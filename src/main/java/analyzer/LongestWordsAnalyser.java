@@ -7,7 +7,7 @@ public class LongestWordsAnalyser implements Analyzer <String[]>{
     }
 
     @Override
-    public void interpret(String[] analyzeResults) {
-
+    public String interpret(String[] analyzeResults) {
+        return null;
     }
 }

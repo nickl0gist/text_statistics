@@ -11,7 +11,7 @@ public class NumberOfWordsAnalyzer implements Analyzer <Integer> {
     }
 
     @Override
-    public void interpret(Integer numberOfWords) {
-        System.out.println("Given text contains " + numberOfWords + "words.");
+    public String interpret(Integer numberOfWords) {
+        return String.format("Given text contains %d words.", numberOfWords);
     }
 }

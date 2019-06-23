@@ -11,7 +11,7 @@ public class WordsFrequencyAnalyzer implements Analyzer<Map<String, Long>> {
     public Map<String, Long> analyze(String text) {
         Map<String, Long> map = new HashMap<>();
 
-        return  Arrays.stream(Analyzer.getTextStream(text))
+        return  Arrays.stream(Analyzer.getTextArray(text))
                 .collect(Collectors.groupingBy(k -> k, () -> map, Collectors.counting()))
                 .entrySet()
                 .stream()

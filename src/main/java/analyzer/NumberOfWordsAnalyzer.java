@@ -1,14 +1,10 @@
 package analyzer;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class NumberOfWordsAnalyzer implements Analyzer <Integer> {
 
     @Override
     public Integer analyze(String text) {
-        return Analyzer.getTextStream(text).length;
+        return Analyzer.getTextArray(text).length;
     }
 
     @Override

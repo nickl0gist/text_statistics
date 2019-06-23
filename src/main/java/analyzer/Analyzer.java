@@ -8,7 +8,7 @@ public interface Analyzer <T>{
 
     String interpret(T analyzeResults);
 
-    static String[] getTextStream(String text){
+    static String[] getTextArray(String text){
         return Arrays.stream(text.split(" "))
                 .map(word -> word.replaceAll("[-+,.:;_=!\"\'\\/\\*\\n?\\r]", "").toLowerCase().trim())
                 .filter(w -> w.length() > 0)

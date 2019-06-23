@@ -3,8 +3,6 @@ package analyzer;
 import java.util.*;
 import java.util.stream.Collectors;
 
-import static java.util.Map.Entry.comparingByValue;
-
 public class WordsFrequencyAnalyzer implements Analyzer<Map<String, Long>> {
 
     private final static int LIST_SIZE = 10;
@@ -13,10 +11,7 @@ public class WordsFrequencyAnalyzer implements Analyzer<Map<String, Long>> {
     public Map<String, Long> analyze(String text) {
         Map<String, Long> map = new HashMap<>();
 
-        return  Arrays.stream(text.split(" "))
-                .map(word -> word.replaceAll("[-+,.:;_=!\"\'\\/\\*\\n?\\r]", "").toLowerCase().trim())
-                .filter(w -> w.length() > 0)
-                .collect(Collectors.groupingBy(k -> k, () -> map, Collectors.counting()))
+        return  Analyzer.getTextStream(text)
                 .entrySet()
                 .stream()
                 .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))

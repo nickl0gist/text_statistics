@@ -1,26 +1,15 @@
 package analyzer;
-
 import org.junit.Before;
 import org.junit.Test;
 import static junit.framework.TestCase.assertEquals;
 
-public class WordsFrequencyAnalyzerTest {
-    WordsFrequencyAnalyzer analyzer;
+public class LongestWordsAnalyserTest {
+
+    LongestWordsAnalyser analyzer;
 
     @Before
     public void setUp(){
-        this.analyzer = new WordsFrequencyAnalyzer();
-    }
-
-    @Test
-    public void shortTextAnalyze(){
-        String text = "Ala ma kota! Dobra Ala";
-        String result = "[ ala => 2 ]\n" +
-                        "[ dobra => 1 ]\n" +
-                        "[ kota => 1 ]\n" +
-                        "[ ma => 1 ]\n";
-        assertEquals(result, analyzer.interpret(analyzer.analyze(text)));
-
+        this.analyzer = new LongestWordsAnalyser();
     }
 
     @Test
@@ -32,18 +21,16 @@ public class WordsFrequencyAnalyzerTest {
                 "remaining took essentially unchanged. It was leap popularised in the 1960s with the release of Letraset " +
                 "sheets containing Lorem Ipsum leap passages, and more recently with desktop publishing software " +
                 "like Aldus PageMaker including versions of Lorem Ipsum.";
-        String result = "[ the => 6 ]\n" +
-                "[ lorem => 5 ]\n" +
-                "[ ipsum => 4 ]\n" +
-                "[ of => 4 ]\n" +
-                "[ leap => 4 ]\n" +
-                "[ took => 3 ]\n" +
-                "[ it => 3 ]\n" +
-                "[ and => 3 ]\n" +
-                "[ pagemaker => 3 ]\n" +
-                "[ type => 2 ]\n";
-        //System.out.println(analyzer.interpret(analyzer.analyze(text)));
+        String result ="[ essentially ]\n" +
+                "[ popularised ]\n" +
+                "[ publishing ]\n" +
+                "[ containing ]\n" +
+                "[ electronic ]\n" +
+                "[ centuries ]\n" +
+                "[ including ]\n" +
+                "[ industrys ]\n" +
+                "[ remaining ]\n" +
+                "[ scrambled ]\n";
         assertEquals(result, analyzer.interpret(analyzer.analyze(text)));
-
     }
 }

@@ -1,6 +1,7 @@
 package analyzer;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class LongestWordsAnalyser implements Analyzer <String[]>{
 
@@ -9,8 +10,8 @@ public class LongestWordsAnalyser implements Analyzer <String[]>{
     @Override
     public String[] analyze(String text) {
         Map<String, Long> map = new HashMap<>();
-
-        return  Analyzer.getTextStream(text)
+        return   Arrays.stream(Analyzer.getTextStream(text))
+                .collect(Collectors.groupingBy(k -> k, () -> map, Collectors.counting()))
                 .entrySet()
                 .stream()
                 .filter(m -> m.getValue() == 1)

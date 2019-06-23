@@ -28,7 +28,7 @@ public class NumberOfWordsAnalyzerTest {
 
     @Test
     public void interpretationTest(){
-        int b = analyzer.analyze(".ala - ma: kota, psa! ");
-        assertEquals("Given text contains 4 words.", analyzer.interpret(b));
+        int b = analyzer.analyze(".ala - ma: kota, psa! ala dobra");
+        assertEquals("Given text contains 6 words.", analyzer.interpret(b));
     }
 }

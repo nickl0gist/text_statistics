@@ -6,7 +6,7 @@ public class NumberOfWordsAnalyzer implements Analyzer <Integer> {
     @Override
     public Integer analyze(String text) {
         return  Math.toIntExact(Stream.of(text.split(" "))
-                .filter(word -> word.replaceAll("[-+,.:;!_=\"\'\\/\\*]","").trim().length() >0)
+                .filter(word -> word.replaceAll("[-+,.:;!_=\"\'\\/\\*\\n?\\r]","").trim().length() >0)
                 .count());
     }
 

@@ -2,10 +2,10 @@ package languageDetector;
 
 import org.junit.Before;
 import org.junit.Test;
-
 import static junit.framework.TestCase.assertEquals;
 
 public class OfflineLanguageDetectorTest {
+
     private OfflineLanguageDetector detector;
 
     @Before

@@ -21,13 +21,9 @@ public class OfflineLanguageDetector implements LanguageDetector {
 
         Language language = result.keySet().iterator().next();
 
-        StringBuilder sb = new StringBuilder();
-        sb.append("Language: ");
-        sb.append(language);
-        sb.append("\n");
-        sb.append(String.format("Confidence: %.2f", result.get(language)));
-
-        return sb.toString();
+        String str = "Language: " + language + "\n";
+        str += String.format("Confidence: %.2f", result.get(language));
+        return str;
     }
 
     private Map<Character, Double[]> calculateStandardDeviation(Map<Character, Double> textMap) {
@@ -41,8 +37,8 @@ public class OfflineLanguageDetector implements LanguageDetector {
             for (int i = 0; i < Language.values().length; i++) {
                 average = (entry.getValue() + letterFrequency.get(entry.getKey())[i]) / 2.0;
                 stDev = Math.sqrt((
-                            Math.pow(entry.getValue() - average, 2.0) +
-                            Math.pow(letterFrequency.get(entry.getKey())[i] - average, 2.0)
+                        Math.pow(entry.getValue() - average, 2.0) +
+                                Math.pow(letterFrequency.get(entry.getKey())[i] - average, 2.0)
                 ) / 2.0);
                 standardDeviationMap.get(entry.getKey())[i] = stDev;
             }
@@ -52,8 +48,8 @@ public class OfflineLanguageDetector implements LanguageDetector {
 
     private Map<Character, Language> convertStDevMapToLanguageMap(Map<Character, Double[]> standardDeviationMap) {
         Map<Character, Language> languageMap = new HashMap<>();
-        for (Map.Entry <Character, Double[]> entry : standardDeviationMap.entrySet()) {
-            int index = IntStream.range(0 , Language.values().length)
+        for (Map.Entry<Character, Double[]> entry : standardDeviationMap.entrySet()) {
+            int index = IntStream.range(0, Language.values().length)
                     .reduce((i, j) -> entry.getValue()[i] < entry.getValue()[j] ? i : j)
                     .orElse(-1);
             languageMap.put(entry.getKey(), Language.getLanguageByIndex(index));
@@ -61,16 +57,14 @@ public class OfflineLanguageDetector implements LanguageDetector {
         return languageMap;
     }
 
-
     private Map<Language, Double> getMostFrequentLanguage(Map<Character, Language> languageMap) {
 
         int total_value = languageMap.size();
-
-        Map <Language, Long> languageChances = languageMap.entrySet().stream()
+        Map<Language, Long> languageChances = languageMap.entrySet().stream()
                 .map(e -> e.getValue())
-                .collect(Collectors.groupingBy(x->x, Collectors.counting()));
+                .collect(Collectors.groupingBy(x -> x, Collectors.counting()));
 
-        return  languageChances
+        return languageChances
                 .entrySet()
                 .stream()
                 .collect(Collectors.toMap(e -> e.getKey(), e -> (e.getValue().doubleValue() / total_value) * 100.0))
@@ -80,5 +74,4 @@ public class OfflineLanguageDetector implements LanguageDetector {
                 .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e2,
                         LinkedHashMap::new));
     }
-
 }

@@ -9,6 +9,6 @@ public class NumberOfWordsAnalyzer implements Analyzer <Integer> {
 
     @Override
     public String interpret(Integer numberOfWords) {
-        return String.format("Given text contains %d words.", numberOfWords);
+        return String.format("Given text contains %d words.\n", numberOfWords);
     }
 }

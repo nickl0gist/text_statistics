@@ -24,6 +24,7 @@ public class LongestWordsAnalyser implements Analyzer <String[]>{
     @Override
     public String interpret(String[] analyzeResults) {
         StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("The list of most longest words in text which were used just once:\n");
         for (String entry : analyzeResults) {
             stringBuilder.append("[ ");
             stringBuilder.append(entry);

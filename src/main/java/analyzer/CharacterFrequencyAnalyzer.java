@@ -32,7 +32,7 @@ public class CharacterFrequencyAnalyzer implements Analyzer <Map <Character, Dou
     @Override
     public String interpret(Map <Character, Double> analyzeResults) {
         StringBuilder stringBuilder = new StringBuilder();
-
+        stringBuilder.append("List of frequencies of characters in a given text expressed as a percentage:\n");
         for (Map.Entry<Character, Double> entry : analyzeResults.entrySet()) {
             stringBuilder.append("[ '");
             stringBuilder.append(entry.getKey());

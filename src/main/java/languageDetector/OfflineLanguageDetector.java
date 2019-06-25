@@ -35,10 +35,11 @@ public class OfflineLanguageDetector implements LanguageDetector {
         for (Map.Entry<Character, Double> entry : textMap.entrySet()) {
             standardDeviationMap.put(entry.getKey(), new Double[Language.values().length]);
             for (int i = 0; i < Language.values().length; i++) {
-                average = (entry.getValue() + letterFrequency.get(entry.getKey())[i]) / 2.0;
+                double letterStat = (letterFrequency.get(entry.getKey()) == null) ? 0.0 : letterFrequency.get(entry.getKey())[i];
+                average = (entry.getValue() + letterStat) / 2.0;
                 stDev = Math.sqrt((
                         Math.pow(entry.getValue() - average, 2.0) +
-                                Math.pow(letterFrequency.get(entry.getKey())[i] - average, 2.0)
+                                Math.pow(letterStat - average, 2.0)
                 ) / 2.0);
                 standardDeviationMap.get(entry.getKey())[i] = stDev;
             }

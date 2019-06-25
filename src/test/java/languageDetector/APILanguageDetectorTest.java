@@ -2,6 +2,7 @@ package languageDetector;
 import com.detectlanguage.errors.APIError;
 import org.junit.Before;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import static junit.framework.TestCase.assertEquals;
 
@@ -30,7 +31,7 @@ public class APILanguageDetectorTest {
 
         assertEquals(result, detector.detect(text));
     }
-
+    @Ignore
     @Test
     public void PolishTextAnalyze() throws APIError {
         String text = "I w Ostrej świecisz Bramie! Ty, co gród zamkowy\n" +

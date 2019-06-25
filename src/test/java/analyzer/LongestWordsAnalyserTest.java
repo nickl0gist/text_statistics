@@ -21,7 +21,8 @@ public class LongestWordsAnalyserTest {
                 "remaining took essentially unchanged. It was leap popularised in the 1960s with the release of Letraset " +
                 "sheets containing Lorem Ipsum leap passages, and more recently with desktop publishing software " +
                 "like Aldus PageMaker including versions of Lorem Ipsum.";
-        String result ="[ essentially ]\n" +
+        String result ="The list of most longest words in text which were used just once:\n" +
+                "[ essentially ]\n" +
                 "[ popularised ]\n" +
                 "[ publishing ]\n" +
                 "[ containing ]\n" +

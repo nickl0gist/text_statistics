@@ -3,8 +3,15 @@ package analyzer;
 import java.util.*;
 import java.util.stream.Collectors;
 
+
+/**
+ * Dedicated to calculate the list of most frequent words in the text
+ */
 public class WordsFrequencyAnalyzer implements Analyzer<Map<String, Long>> {
 
+    /**
+     * The size of list of most frequent words
+     */
     private final static int LIST_SIZE = 10;
 
     @Override
@@ -23,6 +30,8 @@ public class WordsFrequencyAnalyzer implements Analyzer<Map<String, Long>> {
     @Override
     public String interpret(Map<String, Long> analyzeResults) {
         StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append(String.format("List of %d most frequent words in text", LIST_SIZE));
+        stringBuilder.append(":\n");
         for (Map.Entry<String, Long> entry : analyzeResults.entrySet()) {
             stringBuilder.append("[ ");
             stringBuilder.append(entry.getKey());

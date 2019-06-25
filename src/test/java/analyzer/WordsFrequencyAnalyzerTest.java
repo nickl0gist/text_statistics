@@ -15,7 +15,8 @@ public class WordsFrequencyAnalyzerTest {
     @Test
     public void shortTextAnalyze(){
         String text = "Ala ma kota! Dobra Ala";
-        String result = "[ ala => 2 ]\n" +
+        String result = "List of 10 most frequent words in text:\n" +
+                        "[ ala => 2 ]\n" +
                         "[ dobra => 1 ]\n" +
                         "[ kota => 1 ]\n" +
                         "[ ma => 1 ]\n";
@@ -32,7 +33,8 @@ public class WordsFrequencyAnalyzerTest {
                 "remaining took essentially unchanged. It was leap popularised in the 1960s with the release of Letraset " +
                 "sheets containing Lorem Ipsum leap passages, and more recently with desktop publishing software " +
                 "like Aldus PageMaker including versions of Lorem Ipsum.";
-        String result = "[ the => 6 ]\n" +
+        String result = "List of 10 most frequent words in text:\n" +
+                "[ the => 6 ]\n" +
                 "[ lorem => 5 ]\n" +
                 "[ ipsum => 4 ]\n" +
                 "[ of => 4 ]\n" +

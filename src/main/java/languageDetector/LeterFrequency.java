@@ -33,31 +33,6 @@ class LeterFrequency {
         lettersFrequency.put('x', new Double[]{0.1500, 0.0340, 0.2150, 0.2530, 0.0040});
         lettersFrequency.put('y', new Double[]{1.9740, 0.0390, 1.0080, 0.0060, 3.2060});
         lettersFrequency.put('z', new Double[]{0.0740, 1.1340, 0.4670, 0.4700, 4.8520});
-        lettersFrequency.put('ß', new Double[]{0.0000, 0.3070, 0.0000, 0.0000, 0.0000});
-        lettersFrequency.put('à', new Double[]{0.0000, 0.0000, 0.0000, 0.0720, 0.0000});
-        lettersFrequency.put('á', new Double[]{0.0000, 0.0000, 0.5020, 0.1180, 0.0000});
-        lettersFrequency.put('â', new Double[]{0.0000, 0.0000, 0.0000, 0.5620, 0.0000});
-        lettersFrequency.put('ã', new Double[]{0.0000, 0.0000, 0.0000, 0.7330, 0.0000});
-        lettersFrequency.put('ä', new Double[]{0.0000, 0.5780, 0.0000, 0.0000, 0.0000});
-        lettersFrequency.put('ç', new Double[]{0.0000, 0.0000, 0.0000, 0.5300, 0.0000});
-        lettersFrequency.put('é', new Double[]{0.0000, 0.0000, 0.4330, 0.3370, 0.0000});
-        lettersFrequency.put('ê', new Double[]{0.0000, 0.0000, 0.0000, 0.4500, 0.0000});
-        lettersFrequency.put('í', new Double[]{0.0000, 0.0000, 0.7250, 0.1320, 0.0000});
-        lettersFrequency.put('ñ', new Double[]{0.0000, 0.0000, 0.3110, 0.0000, 0.0000});
-        lettersFrequency.put('ó', new Double[]{0.0000, 0.0000, 0.8270, 0.2960, 1.1410});
-        lettersFrequency.put('ô', new Double[]{0.0000, 0.0000, 0.0000, 0.6350, 0.0000});
-        lettersFrequency.put('õ', new Double[]{0.0000, 0.0000, 0.0000, 0.0400, 0.0000});
-        lettersFrequency.put('ö', new Double[]{0.0000, 0.4430, 0.0000, 0.0000, 0.0000});
-        lettersFrequency.put('ú', new Double[]{0.0000, 0.0000, 0.1680, 0.2070, 0.0000});
-        lettersFrequency.put('ü', new Double[]{0.0000, 0.9950, 0.0120, 0.0260, 0.0000});
-        lettersFrequency.put('ą', new Double[]{0.0000, 0.0000, 0.0000, 0.0000, 0.6990});
-        lettersFrequency.put('ć', new Double[]{0.0000, 0.0000, 0.0000, 0.0000, 0.7430});
-        lettersFrequency.put('ę', new Double[]{0.0000, 0.0000, 0.0000, 0.0000, 1.0350});
-        lettersFrequency.put('ł', new Double[]{0.0000, 0.0000, 0.0000, 0.0000, 2.1090});
-        lettersFrequency.put('ń', new Double[]{0.0000, 0.0000, 0.0000, 0.0000, 0.3620});
-        lettersFrequency.put('ś', new Double[]{0.0000, 0.0000, 0.0000, 0.0000, 0.8140});
-        lettersFrequency.put('ź', new Double[]{0.0000, 0.0000, 0.0000, 0.0000, 0.0780});
-        lettersFrequency.put('ż', new Double[]{0.0000, 0.0000, 0.0000, 0.0000, 0.7060});
     }
 
     public static Map<Character, Double[]> getLettersFrequency() {
